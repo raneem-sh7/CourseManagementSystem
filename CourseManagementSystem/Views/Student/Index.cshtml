@@ -21,11 +21,28 @@
         @foreach (var item in Model)
         {
             <tr>
+                <thead>
+                
                 <td>@item.StudentName</td>
                 <td>@item.Country</td>
                 <td>@item.Age</td>
                 <td>@item.Email</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@item.StudentId">
+                        Edit
+                    </a>
+                </td>
+                </thead>
+                
             </tr>
+            
         }
+        
     </tbody>
+    
 </table>
+<td>
+    <a asp-action="Create">
+        <button type="submit"> Create A New Student</button>
+    </a>
+</td>
