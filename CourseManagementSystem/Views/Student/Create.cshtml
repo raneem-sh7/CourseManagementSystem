@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model CourseManagementSystem.Models.Student
+
+<h1>Create Student</h1>
+
+<form asp-action="Create" method="post">
+
+    <div>
+        <label>Name</label>
+        <input asp-for="StudentName" />
+    </div>
+
+    <div>
+        <label>Country</label>
+        <input asp-for="Country" />
+    </div>
+
+    <div>
+        <label>Age</label>
+        <input asp-for="Age" />
+    </div>
+
+    <div>
+        <label>Email</label>
+        <input asp-for="Email" />
+    </div>
+
+    <div>
+        <label>Password</label>
+        <input asp-for="Password" />
+    </div>
+
+    <button type="submit">
+        Save
+    </button>
+
+</form>
