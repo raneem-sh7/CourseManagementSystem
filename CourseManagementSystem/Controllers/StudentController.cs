@@ -18,22 +18,7 @@ namespace CourseManagementSystem.Controllers
 
             return View(students);
         }
-       
-        
-        [HttpPost]
-        public IActionResult Create(Student student)
-        {
-            _context.Students.Add(student);
-            _context.SaveChanges();
-
-            return RedirectToAction("Index");
-        }
-      
-        public IActionResult Edit(int id)
-        {
-            var student = _context.Students.Find(id);
-
-            if (student == null)
+        public IActionResult Create()
         {
             return View();
         }
