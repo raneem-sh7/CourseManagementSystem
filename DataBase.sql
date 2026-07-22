@@ -212,6 +212,8 @@ REFERENCES [dbo].[Teachers] ([Teacher-ID])
 GO
 ALTER TABLE [dbo].[Courses] CHECK CONSTRAINT [FK_Courses_Teachers]
 GO
+
+--Cascade Delete 
 ALTER TABLE [dbo].[Enrollment]  WITH CHECK ADD  CONSTRAINT [FK_Enrollment_Courses] FOREIGN KEY([Course-ID])
 REFERENCES [dbo].[Courses] ([Course-ID])
 ON DELETE CASCADE
