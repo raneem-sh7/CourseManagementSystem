@@ -54,8 +54,9 @@ The database contains the following tables:
 
 ## Challenges & Solutions
 
-### Problem
+## Problems Encountered
 
+### Problem 1:
 While implementing the Delete feature, SQL Server prevented deleting a student because the student had related records in the Enrollment table.
 
 Error:
