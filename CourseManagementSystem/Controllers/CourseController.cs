@@ -16,7 +16,9 @@ namespace CourseManagementSystem.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var Courses = _context.Courses.Include(c => c.Teachear ).Include(c=>c.Section).ToList();
+
+            return View(Courses);
         }
     }
 }
