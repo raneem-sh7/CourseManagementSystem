@@ -95,8 +95,9 @@ var courses = _context.Courses
 
 After loading the related entity, the following code worked correctly:
 
+```
 <td>@item.Teacher.TeacherName</td>
-
+```
 Now the application successfully displays the teacher's name without throwing a NullReferenceException.
 <img width="1521" height="386" alt="image" src="https://github.com/user-attachments/assets/e7aa0b65-e9f3-4fe9-afcd-647f92493de4" />
 
