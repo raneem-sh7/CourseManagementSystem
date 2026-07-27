@@ -20,5 +20,19 @@ namespace CourseManagementSystem.Controllers
 
             return View(Courses);
         }
+
+        public IActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Create(Course course) 
+        {
+            _context.Courses.Add(course);
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
     }
 }

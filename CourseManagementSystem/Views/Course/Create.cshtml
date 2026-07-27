@@ -1,0 +1,44 @@
+﻿@model CourseManagementSystem.Models.Course
+
+<h1>Add Course</h1>
+
+<form asp-action="Create" method="post">
+
+    <div>
+        <label>Course Name</label>
+        <input asp-for="CourseName" />
+    </div>
+
+    <div>
+        <label>Subject</label>
+        <input asp-for="Subject" />
+    </div>
+
+    <div>
+        <label>Teacher ID</label>
+        <input asp-for="TeachearId" />
+    </div>
+
+    <div>
+        <label>Section ID</label>
+        <input asp-for="SectionId" />
+    </div>
+
+    <div>
+        <label>Duration</label>
+        <input asp-for="Duration" />
+    </div>
+    <div>
+        <button type="submit">Add</button>
+        <a asp-action="Index" class="btn btn-secondary">Back</a>
+    </div>
+  
+</form>
+  
+     
+
+
+
+ 
+
+
