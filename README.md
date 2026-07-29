@@ -102,23 +102,22 @@ Now the application successfully displays the teacher's name without throwing a 
 <img width="1521" height="386" alt="image" src="https://github.com/user-attachments/assets/e7aa0b65-e9f3-4fe9-afcd-647f92493de4" />
 
 ---
-###Problem 3 
-
+### Problem 3 
 When creating a new course, the form initially asked the user to enter:
----
+
 -**TeacherId**
 -**SectionId**
----
+
 For example, the user would have to enter:
----
+
 TeacherId = 2
 SectionId = 3
----
+
 Instead, the user should see *meaningful names* such as:
----
+
 Teacher: Sara
 Section: Information Technology
----
+
 However, the database still needs the IDs because TeacherId and SectionId are **foreign keys** in the Course table.
 
 ### Solution: 
@@ -126,7 +125,7 @@ Using **Dropdown Lists** with **ViewBag** and **SelectList**
 
 The solution was to retrieve the list of teachers and sections from the database and pass them from the Controller to the View using ViewBag.
 
-*Before*The Create GET action only returned the View:
+*Before* The Create GET action only returned the View:
 ```
 public IActionResult Create()
 {
@@ -151,8 +150,9 @@ The teachers variable contains a list of all teachers.
 The sections variable contains a list of all sections.
 
 The lists were then stored in:
--**ViewBag.Teachers**
--**ViewBag.Sections**
+
+**-ViewBag.Teachers**
+**-ViewBag.Sections**
 
 This allowed the Create View to access the teachers and sections in addition to the Course model.
 
