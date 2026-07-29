@@ -15,10 +15,13 @@
     </div>
 
     <div>
-        <label>Teacher ID</label>
-        <input asp-for="TeachearId" />
+        <label>Teacher Name</label>
+        
+        <select asp-for="TeachearId"
+                asp-items="@(new SelectList(ViewBag.Teachers, "TeacherId", "TeacherName"))">
+        </select>
     </div>
-
+    
     <div>
         <label>Section ID</label>
         <input asp-for="SectionId" />

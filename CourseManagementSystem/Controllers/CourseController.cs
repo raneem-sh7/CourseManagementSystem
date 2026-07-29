@@ -23,6 +23,10 @@ namespace CourseManagementSystem.Controllers
 
         public IActionResult Create()
         {
+            var teachers = _context.Teachers.ToList();
+
+            ViewBag.Teachers = teachers;
+
             return View();
         }
 
@@ -31,8 +35,10 @@ namespace CourseManagementSystem.Controllers
         {
             _context.Courses.Add(course);
             _context.SaveChanges();
+            
 
             return RedirectToAction("Index");
         }
+        
     }
 }
