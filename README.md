@@ -105,18 +105,18 @@ Now the application successfully displays the teacher's name without throwing a 
 ### Problem 3 
 When creating a new course, the form initially asked the user to enter:
 
--**TeacherId**
--**SectionId**
+- **TeacherId**
+- **SectionId**
 
 For example, the user would have to enter:
 
-TeacherId = 2
-SectionId = 3
+- TeacherId = 2
+- SectionId = 3
 
 Instead, the user should see *meaningful names* such as:
 
-Teacher: Sara
-Section: Information Technology
+- Teacher: Sara
+- Section: Information Technology
 
 However, the database still needs the IDs because TeacherId and SectionId are **foreign keys** in the Course table.
 
@@ -151,8 +151,8 @@ The sections variable contains a list of all sections.
 
 The lists were then stored in:
 
-**-ViewBag.Teachers**
-**-ViewBag.Sections**
+- **ViewBag.Teachers**
+- **ViewBag.Sections**
 
 This allowed the Create View to access the teachers and sections in addition to the Course model.
 
