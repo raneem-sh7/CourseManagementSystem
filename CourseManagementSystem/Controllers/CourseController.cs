@@ -24,8 +24,9 @@ namespace CourseManagementSystem.Controllers
         public IActionResult Create()
         {
             var teachers = _context.Teachers.ToList();
-
+            var sections = _context.Sections.ToList();
             ViewBag.Teachers = teachers;
+            ViewBag.Sections = sections;
 
             return View();
         }

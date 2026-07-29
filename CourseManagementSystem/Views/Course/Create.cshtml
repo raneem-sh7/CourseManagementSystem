@@ -23,8 +23,11 @@
     </div>
     
     <div>
-        <label>Section ID</label>
-        <input asp-for="SectionId" />
+        <label>Section Name</label>
+        <select asp-for="SectionId" 
+                asp-items="@(new SelectList(ViewBag.Sections,"SectionId","SectionName"))">
+
+        </select>
     </div>
 
     <div>
