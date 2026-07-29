@@ -102,19 +102,23 @@ Now the application successfully displays the teacher's name without throwing a 
 <img width="1521" height="386" alt="image" src="https://github.com/user-attachments/assets/e7aa0b65-e9f3-4fe9-afcd-647f92493de4" />
 
 ---
-###Problem3 :
+###Problem 3 
+
 When creating a new course, the form initially asked the user to enter:
+---
 -**TeacherId**
 -**SectionId**
+---
 For example, the user would have to enter:
-
+---
 TeacherId = 2
 SectionId = 3
+---
 Instead, the user should see *meaningful names* such as:
-
+---
 Teacher: Sara
 Section: Information Technology
-
+---
 However, the database still needs the IDs because TeacherId and SectionId are **foreign keys** in the Course table.
 
 ### Solution: 
