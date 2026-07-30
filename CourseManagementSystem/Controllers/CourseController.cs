@@ -40,6 +40,24 @@ namespace CourseManagementSystem.Controllers
 
             return RedirectToAction("Index");
         }
+         public IActionResult Edit(int courseId)
+        {
         
+            var teachers = _context.Teachers.ToList();
+            var sections = _context.Sections.ToList();
+            ViewBag.Teachers = teachers;
+            ViewBag.Sections = sections;
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Edit(Course course)
+        {
+            _context.Courses.Add(course);
+            
+            _context.SaveChanges();
+
+            return RedirectToAction("Index");
+        }
     }
 }

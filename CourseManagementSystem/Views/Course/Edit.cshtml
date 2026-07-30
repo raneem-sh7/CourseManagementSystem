@@ -1,0 +1,41 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+@model CourseManagementSystem.Models.Course
+
+<h1>Edit Course</h1>
+<thead>
+    <style>
+            table, th, td {
+                border: 1px solid black;
+            }
+    </style>
+<form asp-action="Edit" method="post">
+        <div>
+            <label>Course Name</label>
+            <input asp-for="CourseName" /></div>
+        <div>
+            <label>Subject</label>
+            <input asp-for="Subject" /></div>
+        <div> 
+            <label>Teacher Name</label>                   
+            <select asp-for="TeachearId" 
+                    asp-items="@(new SelectList(ViewBag.Teachers,"TeachearId","TeacherName"))">
+            </select>
+        <div>
+            <label>Section Name</label>
+            <select asp-for="SectionId" 
+                    asp-items="@(new SelectList(ViewBag.Sections,"SectionId","SectionName"))">
+            </select>
+        <div>
+            <label>Duration</label>
+            <input asp-for="Duration" />
+        </div>
+        <div>
+            <button type="submit">Save Changes</button>
+            <a asp-action="Index" class="btn btn-secondary">Back</a>
+        </div>
+    </form>
+</thead>
