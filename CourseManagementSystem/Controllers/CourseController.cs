@@ -53,7 +53,7 @@ namespace CourseManagementSystem.Controllers
         [HttpPost]
         public IActionResult Edit(Course course)
         {
-            _context.Courses.Add(course);
+            _context.Courses.Update(course);
             
             _context.SaveChanges();
 
