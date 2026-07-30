@@ -102,7 +102,91 @@ Now the application successfully displays the teacher's name without throwing a 
 <img width="1521" height="386" alt="image" src="https://github.com/user-attachments/assets/e7aa0b65-e9f3-4fe9-afcd-647f92493de4" />
 
 ---
+### Problem 3 
+When creating a new course, the form initially asked the user to enter:
 
+- **TeacherId**
+- **SectionId**
+
+For example, the user would have to enter:
+
+- TeacherId = 2
+- SectionId = 3
+
+Instead, the user should see *meaningful names* such as:
+
+- Teacher: Sara
+- Section: Information Technology
+
+However, the database still needs the IDs because TeacherId and SectionId are **foreign keys** in the Course table.
+
+### Solution: 
+Using **Dropdown Lists** with **ViewBag** and **SelectList**
+
+The solution was to retrieve the list of teachers and sections from the database and pass them from the Controller to the View using ViewBag.
+
+*Before* The Create GET action only returned the View:
+```
+public IActionResult Create()
+{
+    return View();
+}
+```
+*After* The teachers and sections were retrieved from the database:
+```
+public IActionResult Create()
+{
+    var teachers = _context.Teachers.ToList();
+    var sections = _context.Sections.ToList();
+
+    ViewBag.Teachers = teachers;
+    ViewBag.Sections = sections;
+
+    return View();
+}
+```
+The teachers variable contains a list of all teachers.
+
+The sections variable contains a list of all sections.
+
+The lists were then stored in:
+
+- **ViewBag.Teachers**
+- **ViewBag.Sections**
+
+This allowed the Create View to access the teachers and sections in addition to the Course model.
+
+Updating the **Course Create View**:
+
+The TeacherId and SectionId input fields were replaced with dropdown lists so users can select names instead of entering numeric IDs.
+
+*Before:*
+
+```
+<input asp-for="TeachearId" class="form-control" />
+<input asp-for="SectionId" class="form-control" />
+
+```
+*After:*
+
+```
+<select asp-for="TeachearId"
+        asp-items="@(new SelectList(ViewBag.Teachers, "TeacherId", "TeacherName"))"
+        class="form-control">
+</select>
+
+<select asp-for="SectionId"
+        asp-items="@(new SelectList(ViewBag.Sections, "SectionId", "SectionName"))"
+        class="form-control">
+</select>
+
+```
+### Result:
+TeacherName and SectionName are displayed to the user.
+TeacherId and SectionId are sent to the Controller.
+The IDs are stored in the Course table as foreign keys.
+
+This made the Create form easier and **more user-friendly.**
 ## What I Learned
 
 During this project I practiced:
